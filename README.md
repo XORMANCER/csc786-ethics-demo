@@ -34,4 +34,8 @@ orbit estimates, so distance or velocity values could change slightly over time,
 the file hash. Compare against the logged hash in `DATA_README.md`.
 
 ## Reflection
-_What worked, what broke, what I fixed:_ (fill in)
+The NASA API call and provenance logging worked after a few minor tweaks.
+The main problem was pushing from Colab: the remote URL was saved with a blank repo name because Colab doesn’t 
+fill in Python variables on a line that also uses a shell variable like $GITHUB_TOKEN. 
+I fixed it by using environment variables for the whole URL and git remote set-url to repair the saved remote.
+
